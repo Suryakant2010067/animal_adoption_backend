@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: animal-adoption-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    region: singapore
+    healthCheckPath: /api/animals
+    envVars:
+      - key: PORT
+        value: "8080"
